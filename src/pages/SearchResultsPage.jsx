@@ -11,12 +11,12 @@ const SearchResultsPage = () => {
   const [filteredNews, setFilteredNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [sidebarVisible, setSidebarVisible] = useState(true); // State for sidebar visibility
 
   // Extract `crypto` query from URL
   useEffect(() => {
     const query = new URLSearchParams(location.search);
     const selectedCrypto = query.get("crypto");
-    console.log("Selected Crypto from URL:", selectedCrypto); // Debugging the selected crypto
     if (!selectedCrypto) {
       navigate("/"); // Redirect if `crypto` is invalid
     } else {
@@ -27,7 +27,6 @@ const SearchResultsPage = () => {
   // Fetch news whenever `crypto` changes
   useEffect(() => {
     if (!crypto) return;
-    console.log("Fetching news for:", crypto); // Debugging current crypto state
     const fetchNews = async () => {
       try {
         setLoading(true);
@@ -42,7 +41,6 @@ const SearchResultsPage = () => {
         }
 
         const data = await response.json();
-        console.log("Fetched data:", data); // Debugging fetched data
 
         if (data.Data && data.Data.length > 0) {
           setNews(data.Data);
@@ -51,7 +49,6 @@ const SearchResultsPage = () => {
           setError("No news found for the selected cryptocurrency.");
         }
       } catch (err) {
-        console.error("Error fetching news:", err);
         setError("Failed to fetch news. Please try again.");
       } finally {
         setLoading(false);
@@ -71,6 +68,11 @@ const SearchResultsPage = () => {
     }
   }, [news, crypto]);
 
+  // Toggle sidebar visibility
+  const toggleSidebar = () => {
+    setSidebarVisible((prev) => !prev);
+  };
+
   // Navigate back to home page
   const handleBackToHome = () => {
     navigate("/");
@@ -78,12 +80,14 @@ const SearchResultsPage = () => {
 
   return (
     <div className="search-results-page">
-      <Sidebar predefinedCryptos={[ "Bitcoin", "Ethereum", "Binance Coin", "Tether", "USD Coin", 
-    "Ripple", "Cardano", "Solana", "Dogecoin", "Polkadot", 
-    "Uniswap", "Litecoin", "Chainlink", "Bitcoin Cash", "Avalanche", 
-    "Polygon", "Stellar", "VeChain", "TRON", "Filecoin", 
-    "Ethereum Classic", "Algorand", "Tezos", "Cosmos", "Monero", 
-    "EOS", "Zcash", "Shiba Inu", "Aave", "IOTA", "Maker"]} />
+      <button className="sidebar-toggle" onClick={toggleSidebar}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
+      {sidebarVisible && (
+        <Sidebar predefinedCryptos={["Bitcoin", "Ethereum", "Binance Coin", "Tether", "USD Coin", "Ripple", "Cardano", "Solana", "Dogecoin", "Polkadot", "Uniswap", "Litecoin", "Chainlink", "Bitcoin Cash", "Avalanche", "Polygon", "Stellar", "VeChain", "TRON", "Filecoin", "Ethereum Classic", "Algorand", "Tezos", "Cosmos", "Monero", "EOS", "Zcash", "Shiba Inu", "Aave", "IOTA", "Maker"]} />
+      )}
       <div className="results-container">
         <button className="menu-button" onClick={handleBackToHome}>
           Back to Home

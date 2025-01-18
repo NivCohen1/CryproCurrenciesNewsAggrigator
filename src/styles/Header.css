@@ -1,38 +1,49 @@
 /* src/styles/Header.css */
 .auth-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
-}
-
-.auth-buttons button,
-.auth-logged-in button {
-  margin: 5px;
-  padding: 5px 10px;
-  background-color: #007bff;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-.auth-buttons button:hover,
-.auth-logged-in button:hover {
-  background-color: #0056b3;
-}
-
-.auth-logged-in {
-  display: flex;
-  align-items: center; /* Ensures user name and button are vertically aligned */
-}
-
-.user-name {
-  margin-right: 10px; /* Adds some space between the username and the button */
-  font-size: 1rem; /* Optional: adjust font size for better appearance */
-}
-
-.auth-button.logout {
-    background-color: #dc3545; /* Red background for logout */
+    display: flex;
+    justify-content: flex-end;  /* Changed from space-between to flex-end */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .auth-buttons {
+    margin-left: auto;  /* This pushes the buttons to the right */
+  }
+  
+  .auth-buttons button,
+  .auth-logged-in button {
+    margin: 5px;
+    padding: 5px 20px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;  /* Optional: added for better appearance */
+    transition: background-color 0.3s ease;  /* Optional: smooth hover transition */
+  }
+  
+  .auth-buttons button:hover,
+  .auth-logged-in button:hover {
+    background-color: #0056b3;
+  }
+  
+  .auth-logged-in {
+    display: flex;
+    align-items: center;
+    margin-left: auto;  /* This pushes the logged-in section to the right */
+  }
+  
+  .user-name {
+    margin-right: 10px;
+    font-size: 1rem;
+  }
+  
+  .auth-button.logout {
+    background-color: #dc3545;
+  }
+  
+  .auth-button.logout:hover {
+    background-color: #c82333;  /* Darker red on hover */
   }

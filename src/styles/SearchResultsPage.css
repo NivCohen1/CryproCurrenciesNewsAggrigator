@@ -70,6 +70,59 @@
   margin-top: 10px;
 }
 
+.sidebar-toggle {
+  position: fixed;
+  top: 1px; /* Match the header's padding */
+  left: 20px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-toggle:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.sidebar-toggle .bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #333;
+  margin: 3px 0;
+  transition: 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Add hover effect for the bars */
+.sidebar-toggle:hover .bar {
+  background-color: #1c6580;  /* Matching your link color from Sidebar.css */
+}
+
+/* Animation for the bars when sidebar is open */
+.sidebar-toggle.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.sidebar-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.sidebar-toggle.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
 @media (max-width: 768px) {
   .result-card {
     flex-direction: column; /* Stack content vertically on smaller screens */

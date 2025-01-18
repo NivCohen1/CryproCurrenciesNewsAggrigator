@@ -1,6 +1,6 @@
 .sidebar {
   width: 170px; /* Smaller width */
-  height: 230vh;
+  height: 200vh;
   background-color: #f3f1f1b9;
   padding: 10px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
@@ -27,11 +27,3 @@
   cursor: pointer;
 }
 
-.sidebar a:hover {
-  background-color: #007bff;
-  color: white;
-}
-
-.sidebar a:active {
-  background-color: #0056b3;
-}
