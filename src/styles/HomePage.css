@@ -3,57 +3,12 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #f8fafc;
+  background-color: hsl(210, 40%, 98%);
 }
-
-/* Auth section */
-.auth-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 64px;
-  background-color: #ffffff; /* White background */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  z-index: 50; /* Stays on top of other elements */
-  display: flex;
-  justify-content: flex-end; /* Align buttons to the right */
-  align-items: center; /* Vertically center the content */
-  padding: 0 1.5rem; /* Reduced padding for better spacing */
-}
-
-.auth-buttons {
-  display: flex;
-  gap: 0.5rem; /* Reduced gap for compact alignment */
-}
-
-.auth-button {
-  padding: 0.3rem 1.2rem; /* Adjusted padding for better proportions */
-  font-weight: 500; /* Medium font weight */
-  border-radius: 0.25rem; /* Slightly less rounded corners */
-  font-size: 0.9rem; /* Smaller font size for buttons */
-  transition: all 0.2s; /* Smooth hover transitions */
-  cursor: pointer;
-}
-
-.auth-button.login,
-.auth-button.profile,
-.auth-button.signup {
-  color: white;
-  background-color: #2563eb; /* Stronger blue for a modern look */
-}
-
-.auth-button:hover {
-  background-color: #1d4ed8; /* Darker blue for hover effect */
-}
-
 
 /* Main content area */
 .main-content {
-  margin-top: 64px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  margin-top: 84px;
 }
 
 /* Header section */
@@ -82,35 +37,24 @@
   margin-bottom: 2rem;
 }
 
-.user-name {
-  font-size: 1.2rem; /* Adjust size as needed */
-  font-weight: bold; /* Makes the name bold */
-  color: #333; /* Dark color for the text */
-  text-align: center; /* Centers the text */
-  padding: 5px; /* Adds padding around the text */
-  border-radius: 5px; /* Optional: rounded corners */
-  background-color: #f0f0f0; /* Light background for contrast */
-}
-
-
 /* Search section */
 .search-container {
   max-width: 36rem;
   margin: 0 auto;
   position: relative;
   display: flex;
-  align-items: center;  /* Aligns the button and input better */
+  align-items: center;
 }
 
 .search-input {
   width: 100%;
   padding: 0.75rem 1rem;
-  padding-right: 4rem; /* Adjusted padding for better spacing */
+  padding-right: 4rem;
   border: 2px solid #e2e8f0;
   border-radius: 0.5rem;
   font-size: 1rem;
   transition: all 0.2s;
-  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  box-sizing: border-box;
 }
 
 .search-input:focus {
@@ -121,9 +65,9 @@
 
 .search-button {
   position: absolute;
-  right: 0; /* Positioned on the right side of the input */
-  top: 110%;
-  transform: translateY(-50%); /* Vertically center the button */
+  right: 0;
+  top: 80%;
+  transform: translateY(-50%);
   padding: 0.5rem 1rem;
   background-color: #3b82f6;
   color: white;
@@ -170,14 +114,12 @@
   position: relative;
 }
 
-/* News content */
 .news-content {
   flex: 1;
   margin-left: 0rem;
   padding: 2rem;
   transition: all 0.3s;
 }
-
 
 .news-grid {
   display: grid;
@@ -322,10 +264,6 @@
 }
 
 @media (max-width: 480px) {
-  .auth-header {
-    padding: 0 1rem;
-  }
-
   .news-grid {
     grid-template-columns: 1fr;
   }

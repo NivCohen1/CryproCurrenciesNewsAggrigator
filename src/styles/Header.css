@@ -1,49 +1,82 @@
-/* src/styles/Header.css */
 .auth-header {
-    display: flex;
-    justify-content: flex-end;  /* Changed from space-between to flex-end */
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-  }
-  
-  .auth-buttons {
-    margin-left: auto;  /* This pushes the buttons to the right */
-  }
-  
-  .auth-buttons button,
-  .auth-logged-in button {
-    margin: 5px;
-    padding: 5px 20px;
-    background-color: #007bff;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 4px;  /* Optional: added for better appearance */
-    transition: background-color 0.3s ease;  /* Optional: smooth hover transition */
-  }
-  
-  .auth-buttons button:hover,
-  .auth-logged-in button:hover {
-    background-color: #0056b3;
-  }
-  
-  .auth-logged-in {
-    display: flex;
-    align-items: center;
-    margin-left: auto;  /* This pushes the logged-in section to the right */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  min-height: 48px; /* Keep the header compact */
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; /* Center all content vertically */
+  padding: 0.3rem 1.5rem;
+}
+
+.auth-logged-in {
+  display: flex;
+  flex-direction: column; /* Stack the username and buttons vertically */
+  align-items: flex-end; /* Align everything to the right */
+  gap: 0.2rem; /* Smaller gap between username and buttons */
+  margin: 0; /* Remove any unintended margin */
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 0.3rem; /* Smaller gap between buttons */
+  margin: 0; /* Ensure no extra space is added */
+}
+
+.auth-button {
+  padding: 0.3rem 1rem; /* Adjust padding for smaller buttons */
+  font-size: 0.9rem; /* Adjust font size to fit better */
+  color: white;
+  background-color: #2563eb;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+  background-color: #1d4ed8;
+}
+
+.auth-button.logout {
+  background-color: #dc3545;
+}
+
+.auth-button.logout:hover {
+  background-color: #c82333;
+}
+
+.user-name {
+  font-size: 0.9rem; /* Adjust font size for consistency */
+  font-weight: bold;
+  color: #333;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0; /* Ensure no extra space is added */
+}
+
+@media (max-width: 480px) {
+  .auth-header {
+    padding: 0.25rem 0.75rem;
   }
   
   .user-name {
-    margin-right: 10px;
-    font-size: 1rem;
+    font-size: 0.8rem;
+    max-width: 150px;
   }
-  
-  .auth-button.logout {
-    background-color: #dc3545;
+
+  .auth-button {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.8rem;
   }
-  
-  .auth-button.logout:hover {
-    background-color: #c82333;  /* Darker red on hover */
-  }
+}
