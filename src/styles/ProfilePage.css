@@ -1,6 +1,7 @@
 /* ProfilePage.css */
 .profile-page {
-  max-width: 900px;
+  max-width: 1200px; /* Increased max-width for larger screens */
+  width: 90%; /* Makes the width responsive with some padding */
   margin: 0 auto;
   padding: 20px;
   background-color: #f9f9f9;
@@ -8,12 +9,14 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Header Styles */
 .profile-page h2 {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #333;
 }
 
+/* Button Styles */
 .menu-button {
   background-color: #3b82f6;
   color: white;
@@ -33,6 +36,7 @@
   background-color: #1d4ed8;
 }
 
+/* Paragraph Styles */
 .profile-page p {
   font-size: 1.1rem;
   margin-bottom: 10px;
@@ -45,6 +49,7 @@
   color: #333;
 }
 
+/* Favorites List Styles */
 .favorites-list {
   list-style-type: none;
   padding: 0;
@@ -67,6 +72,7 @@
   height: 20px;
 }
 
+/* Save Button Styles */
 button {
   background-color: #3b82f6;
   color: white;
@@ -86,6 +92,7 @@ button:active {
   background-color: #1d4ed8;
 }
 
+/* Save Status Styles */
 .save-status {
   margin-top: 15px;
   font-size: 1rem;
@@ -96,4 +103,18 @@ button:active {
 
 .save-status.error {
   color: #dc3545;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .profile-page {
+    max-width: 900px; /* Adjust for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-page {
+    max-width: 100%; /* Use full width for smaller screens */
+    padding: 10px; /* Adjust padding */
+  }
 }

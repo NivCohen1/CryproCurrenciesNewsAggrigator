@@ -1,0 +1,38 @@
+/* src/styles/Header.css */
+.auth-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+.auth-buttons button,
+.auth-logged-in button {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.auth-buttons button:hover,
+.auth-logged-in button:hover {
+  background-color: #0056b3;
+}
+
+.auth-logged-in {
+  display: flex;
+  align-items: center; /* Ensures user name and button are vertically aligned */
+}
+
+.user-name {
+  margin-right: 10px; /* Adds some space between the username and the button */
+  font-size: 1rem; /* Optional: adjust font size for better appearance */
+}
+
+.auth-button.logout {
+    background-color: #dc3545; /* Red background for logout */
+  }
