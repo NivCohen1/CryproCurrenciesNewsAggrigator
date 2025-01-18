@@ -12,6 +12,7 @@ const Sidebar = ({ predefinedCryptos }) => {
 
   return (
     <div className="sidebar">
+      
       <h3>Popular Cryptos</h3>
       {predefinedCryptos.map((crypto, index) => (
         <a
