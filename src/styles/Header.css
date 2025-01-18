@@ -44,20 +44,21 @@
 }
 
 .auth-button.logout {
-  background-color: #dc3545;
+  background-color: #545252;
 }
 
-.auth-button.logout:hover {
-  background-color: #c82333;
+.auth-button.profile {
+  background-color: #4caf50; /* Green for the profile button */
 }
+
 
 .user-name {
   font-size: 0.9rem; /* Adjust font size for consistency */
   font-weight: bold;
-  color: #333;
+  color: #ffffff;
   padding: 4px;
   border-radius: 4px;
-  background-color: #f0f0f0;
+  background-color: #1a1a1a;
   max-width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
